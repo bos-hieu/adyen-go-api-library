@@ -1,4 +1,4 @@
-module github.com/bos-hieu/adyen-go-api-library/v5
+module github.com/bos-hieu/adyen-go-api-library
 
 go 1.18
 

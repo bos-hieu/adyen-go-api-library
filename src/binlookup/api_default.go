@@ -14,7 +14,7 @@ import (
     _context "context"
     _nethttp "net/http"
 
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/src/common"
 )
 
 // BinLookup BinLookup service

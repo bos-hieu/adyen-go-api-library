@@ -7,13 +7,13 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/adyen"
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
+	"github.com/bos-hieu/adyen-go-api-library/src/adyen"
+	"github.com/bos-hieu/adyen-go-api-library/src/common"
 )
 
 func main() {
-    client := adyen.NewClient(&common.Config{Environment: common.TestEnv})
-    fmt.Println("Welcome to Adyen API Client. Env: " + client.GetConfig().Environment)
+	client := adyen.NewClient(&common.Config{Environment: common.TestEnv})
+	fmt.Println("Welcome to Adyen API Client. Env: " + client.GetConfig().Environment)
 }

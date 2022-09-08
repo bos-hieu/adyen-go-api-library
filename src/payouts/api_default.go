@@ -11,10 +11,10 @@
 package payouts
 
 import (
-    _context "context"
-    _nethttp "net/http"
+	_context "context"
+	_nethttp "net/http"
 
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
+	"github.com/bos-hieu/adyen-go-api-library/src/common"
 )
 
 // Payouts Payouts service
@@ -28,9 +28,9 @@ Confirms a previously submitted payout.  To cancel a payout, use the &#x60;/decl
 @return ModifyResponse
 */
 func (a Payouts) ConfirmThirdParty(req *ModifyRequest, ctxs ..._context.Context) (ModifyResponse, *_nethttp.Response, error) {
-    res := &ModifyResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/confirmThirdParty", ctxs...)
-    return *res, httpRes, err
+	res := &ModifyResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/confirmThirdParty", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -41,9 +41,9 @@ Cancels a previously submitted payout.  To confirm and send a payout, use the &#
 @return ModifyResponse
 */
 func (a Payouts) DeclineThirdParty(req *ModifyRequest, ctxs ..._context.Context) (ModifyResponse, *_nethttp.Response, error) {
-    res := &ModifyResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/declineThirdParty", ctxs...)
-    return *res, httpRes, err
+	res := &ModifyResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/declineThirdParty", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -54,9 +54,9 @@ With this call, you can pay out to your customers, and funds will be made availa
 @return PayoutResponse
 */
 func (a Payouts) Payout(req *PayoutRequest, ctxs ..._context.Context) (PayoutResponse, *_nethttp.Response, error) {
-    res := &PayoutResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payout", ctxs...)
-    return *res, httpRes, err
+	res := &PayoutResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payout", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -67,9 +67,9 @@ Submits a payout and stores its details for subsequent payouts.  The submitted p
 @return StoreDetailAndSubmitResponse
 */
 func (a Payouts) StoreDetailAndSubmitThirdParty(req *StoreDetailAndSubmitRequest, ctxs ..._context.Context) (StoreDetailAndSubmitResponse, *_nethttp.Response, error) {
-    res := &StoreDetailAndSubmitResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/storeDetailAndSubmitThirdParty", ctxs...)
-    return *res, httpRes, err
+	res := &StoreDetailAndSubmitResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/storeDetailAndSubmitThirdParty", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -80,9 +80,9 @@ Stores payment details under the &#x60;PAYOUT&#x60; recurring contract. These pa
 @return StoreDetailResponse
 */
 func (a Payouts) StoreDetail(req *StoreDetailRequest, ctxs ..._context.Context) (StoreDetailResponse, *_nethttp.Response, error) {
-    res := &StoreDetailResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/storeDetail", ctxs...)
-    return *res, httpRes, err
+	res := &StoreDetailResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/storeDetail", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -93,7 +93,7 @@ Submits a payout using the previously stored payment details. To store payment d
 @return SubmitResponse
 */
 func (a Payouts) SubmitThirdParty(req *SubmitRequest, ctxs ..._context.Context) (SubmitResponse, *_nethttp.Response, error) {
-    res := &SubmitResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/submitThirdParty", ctxs...)
-    return *res, httpRes, err
+	res := &SubmitResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/submitThirdParty", ctxs...)
+	return *res, httpRes, err
 }

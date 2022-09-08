@@ -11,10 +11,10 @@
 package platformsnotificationconfiguration
 
 import (
-    _context "context"
-    _nethttp "net/http"
+	_context "context"
+	_nethttp "net/http"
 
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
+	"github.com/bos-hieu/adyen-go-api-library/src/common"
 )
 
 // PlatformsNotificationConfiguration PlatformsNotificationConfiguration service
@@ -28,9 +28,9 @@ Creates a subscription to notifications informing you of events on your platform
 @return GetNotificationConfigurationResponse
 */
 func (a PlatformsNotificationConfiguration) CreateNotificationConfiguration(req *CreateNotificationConfigurationRequest, ctxs ..._context.Context) (GetNotificationConfigurationResponse, *_nethttp.Response, error) {
-    res := &GetNotificationConfigurationResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/createNotificationConfiguration", ctxs...)
-    return *res, httpRes, err
+	res := &GetNotificationConfigurationResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/createNotificationConfiguration", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -41,9 +41,9 @@ This endpoint is used to delete an existing notification subscription configurat
 @return GenericResponse
 */
 func (a PlatformsNotificationConfiguration) DeleteNotificationConfigurations(req *DeleteNotificationConfigurationRequest, ctxs ..._context.Context) (GenericResponse, *_nethttp.Response, error) {
-    res := &GenericResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteNotificationConfigurations", ctxs...)
-    return *res, httpRes, err
+	res := &GenericResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteNotificationConfigurations", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -54,9 +54,9 @@ This endpoint is used to retrieve the details of the configuration of a notifica
 @return GetNotificationConfigurationResponse
 */
 func (a PlatformsNotificationConfiguration) GetNotificationConfiguration(req *GetNotificationConfigurationRequest, ctxs ..._context.Context) (GetNotificationConfigurationResponse, *_nethttp.Response, error) {
-    res := &GetNotificationConfigurationResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getNotificationConfiguration", ctxs...)
-    return *res, httpRes, err
+	res := &GetNotificationConfigurationResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getNotificationConfiguration", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -67,9 +67,9 @@ This endpoint is used to retrieve the details of the configurations of all of th
 @return GetNotificationConfigurationListResponse
 */
 func (a PlatformsNotificationConfiguration) GetNotificationConfigurationList(req interface{}, ctxs ..._context.Context) (GetNotificationConfigurationListResponse, *_nethttp.Response, error) {
-    res := &GetNotificationConfigurationListResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getNotificationConfigurationList", ctxs...)
-    return *res, httpRes, err
+	res := &GetNotificationConfigurationListResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getNotificationConfigurationList", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -80,9 +80,9 @@ This endpoint is used to test an existing notification subscription configuratio
 @return TestNotificationConfigurationResponse
 */
 func (a PlatformsNotificationConfiguration) TestNotificationConfiguration(req *TestNotificationConfigurationRequest, ctxs ..._context.Context) (TestNotificationConfigurationResponse, *_nethttp.Response, error) {
-    res := &TestNotificationConfigurationResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/testNotificationConfiguration", ctxs...)
-    return *res, httpRes, err
+	res := &TestNotificationConfigurationResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/testNotificationConfiguration", ctxs...)
+	return *res, httpRes, err
 }
 
 /*
@@ -93,7 +93,7 @@ This endpoint is used to update an existing notification subscription configurat
 @return GetNotificationConfigurationResponse
 */
 func (a PlatformsNotificationConfiguration) UpdateNotificationConfiguration(req *UpdateNotificationConfigurationRequest, ctxs ..._context.Context) (GetNotificationConfigurationResponse, *_nethttp.Response, error) {
-    res := &GetNotificationConfigurationResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateNotificationConfiguration", ctxs...)
-    return *res, httpRes, err
+	res := &GetNotificationConfigurationResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateNotificationConfiguration", ctxs...)
+	return *res, httpRes, err
 }

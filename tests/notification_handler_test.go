@@ -1,29 +1,29 @@
 package tests
 
 import (
-    "testing"
+	"testing"
 
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/adyen"
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
-    "github.com/bos-hieu/adyen-go-api-library/v5/src/notification"
+	"github.com/bos-hieu/adyen-go-api-library/src/adyen"
+	"github.com/bos-hieu/adyen-go-api-library/src/common"
+	"github.com/bos-hieu/adyen-go-api-library/src/notification"
 )
 
 func TestNotificationService_HandleNotificationRequest(t *testing.T) {
 
-    client := adyen.NewClient(&common.Config{})
+	client := adyen.NewClient(&common.Config{})
 
-    tests := []struct {
-        name    string
-        req     string
-        want    func(got *notification.Notification, t *testing.T)
-        wantErr bool
-    }{
-        {
-            "should return authorisation success",
-            `{
+	tests := []struct {
+		name    string
+		req     string
+		want    func(got *notification.Notification, t *testing.T)
+		wantErr bool
+	}{
+		{
+			"should return authorisation success",
+			`{
                 "live": "false",
                 "notificationItems": [
                   {
@@ -60,25 +60,25 @@ func TestNotificationService_HandleNotificationRequest(t *testing.T) {
                 ]
               }
             `,
-            func(got *notification.Notification, t *testing.T) {
-                require.NotNil(t, got)
-                assert.Equal(t, 1, len(got.GetNotificationItems()))
-                ni := got.GetNotificationItems()[0]
-                assert.Equal(t, notification.EventCodeAuthorisation, ni.EventCode)
-                assert.Equal(t, "true", ni.Success)
-                assert.Equal(t, "123456789", ni.PspReference)
-                assert.NotEmpty(t, ni.AdditionalData)
-                ad := *ni.AdditionalData
-                assert.Equal(t, "1234", ad["authCode"])
-                assert.NotEmpty(t, ni.Amount)
-                assert.NotEmpty(t, ni.EventDate)
-                assert.NotEmpty(t, ni.Operations)
-            },
-            false,
-        },
-        {
-            "should return capture success",
-            `{
+			func(got *notification.Notification, t *testing.T) {
+				require.NotNil(t, got)
+				assert.Equal(t, 1, len(got.GetNotificationItems()))
+				ni := got.GetNotificationItems()[0]
+				assert.Equal(t, notification.EventCodeAuthorisation, ni.EventCode)
+				assert.Equal(t, "true", ni.Success)
+				assert.Equal(t, "123456789", ni.PspReference)
+				assert.NotEmpty(t, ni.AdditionalData)
+				ad := *ni.AdditionalData
+				assert.Equal(t, "1234", ad["authCode"])
+				assert.NotEmpty(t, ni.Amount)
+				assert.NotEmpty(t, ni.EventDate)
+				assert.NotEmpty(t, ni.Operations)
+			},
+			false,
+		},
+		{
+			"should return capture success",
+			`{
                 "live": "false",
                 "notificationItems": [
                   {
@@ -104,20 +104,20 @@ func TestNotificationService_HandleNotificationRequest(t *testing.T) {
                 ]
               }
             `,
-            func(got *notification.Notification, t *testing.T) {
-                require.NotNil(t, got)
-                assert.Equal(t, 1, len(got.GetNotificationItems()))
-                ni := got.GetNotificationItems()[0]
-                assert.Equal(t, notification.EventCodeCapture, ni.EventCode)
-                assert.Equal(t, "true", ni.Success)
-                assert.Equal(t, "PSP_REFERENCE", ni.PspReference)
-                assert.Equal(t, "ORIGINAL_PSP", ni.OriginalReference)
-            },
-            false,
-        },
-        {
-            "should return refund fail",
-            `{
+			func(got *notification.Notification, t *testing.T) {
+				require.NotNil(t, got)
+				assert.Equal(t, 1, len(got.GetNotificationItems()))
+				ni := got.GetNotificationItems()[0]
+				assert.Equal(t, notification.EventCodeCapture, ni.EventCode)
+				assert.Equal(t, "true", ni.Success)
+				assert.Equal(t, "PSP_REFERENCE", ni.PspReference)
+				assert.Equal(t, "ORIGINAL_PSP", ni.OriginalReference)
+			},
+			false,
+		},
+		{
+			"should return refund fail",
+			`{
                 "live": "false",
                 "notificationItems": [
                   {
@@ -143,27 +143,27 @@ func TestNotificationService_HandleNotificationRequest(t *testing.T) {
                 ]
               }
             `,
-            func(got *notification.Notification, t *testing.T) {
-                require.NotNil(t, got)
-                assert.Equal(t, 1, len(got.GetNotificationItems()))
-                ni := got.GetNotificationItems()[0]
-                assert.Equal(t, notification.EventCodeRefund, ni.EventCode)
-                assert.Equal(t, "false", ni.Success)
-                assert.Equal(t, "PSP_REFERENCE", ni.PspReference)
-                assert.Equal(t, "ORIGINAL_PSP", ni.OriginalReference)
-            },
-            false,
-        },
-    }
-    for _, tt := range tests {
-        t.Run(tt.name, func(t *testing.T) {
-            got, err := client.Notification.HandleNotificationRequest(tt.req)
-            if (err != nil) != tt.wantErr {
-                t.Errorf("NotificationService.HandleNotificationRequest() error = %v, wantErr %v", err, tt.wantErr)
-                return
-            }
-            require.Nil(t, err)
-            tt.want(got, t)
-        })
+			func(got *notification.Notification, t *testing.T) {
+				require.NotNil(t, got)
+				assert.Equal(t, 1, len(got.GetNotificationItems()))
+				ni := got.GetNotificationItems()[0]
+				assert.Equal(t, notification.EventCodeRefund, ni.EventCode)
+				assert.Equal(t, "false", ni.Success)
+				assert.Equal(t, "PSP_REFERENCE", ni.PspReference)
+				assert.Equal(t, "ORIGINAL_PSP", ni.OriginalReference)
+			},
+			false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := client.Notification.HandleNotificationRequest(tt.req)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("NotificationService.HandleNotificationRequest() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			require.Nil(t, err)
+			tt.want(got, t)
+		})
 	}
 }
