@@ -11,10 +11,10 @@
 package recurring
 
 import (
-	_context "context"
-	_nethttp "net/http"
+    _context "context"
+    _nethttp "net/http"
 
-	"github.com/adyen/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
 )
 
 // Recurring Recurring service
@@ -28,9 +28,9 @@ Disables stored payment details to stop charging a shopper with this particular 
 @return DisableResult
 */
 func (a Recurring) Disable(req *DisableRequest, ctxs ..._context.Context) (DisableResult, *_nethttp.Response, error) {
-	res := &DisableResult{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/disable", ctxs...)
-	return *res, httpRes, err
+    res := &DisableResult{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/disable", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -41,9 +41,9 @@ Lists the stored payment details for a shopper, if there are any available. The 
 @return RecurringDetailsResult
 */
 func (a Recurring) ListRecurringDetails(req *RecurringDetailsRequest, ctxs ..._context.Context) (RecurringDetailsResult, *_nethttp.Response, error) {
-	res := &RecurringDetailsResult{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/listRecurringDetails", ctxs...)
-	return *res, httpRes, err
+    res := &RecurringDetailsResult{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/listRecurringDetails", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -54,7 +54,7 @@ When making the API call, you can submit either the credit card information, or 
 @return ScheduleAccountUpdaterResult
 */
 func (a Recurring) ScheduleAccountUpdater(req *ScheduleAccountUpdaterRequest, ctxs ..._context.Context) (ScheduleAccountUpdaterResult, *_nethttp.Response, error) {
-	res := &ScheduleAccountUpdaterResult{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/scheduleAccountUpdater", ctxs...)
-	return *res, httpRes, err
+    res := &ScheduleAccountUpdaterResult{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/scheduleAccountUpdater", ctxs...)
+    return *res, httpRes, err
 }

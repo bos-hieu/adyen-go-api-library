@@ -11,10 +11,10 @@
 package binlookup
 
 import (
-	_context "context"
-	_nethttp "net/http"
+    _context "context"
+    _nethttp "net/http"
 
-	"github.com/adyen/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
 )
 
 // BinLookup BinLookup service
@@ -28,9 +28,9 @@ Verifies whether 3D Secure is available for the specified BIN or card brand. For
 @return ThreeDSAvailabilityResponse
 */
 func (a BinLookup) Get3dsAvailability(req *ThreeDSAvailabilityRequest, ctxs ..._context.Context) (ThreeDSAvailabilityResponse, *_nethttp.Response, error) {
-	res := &ThreeDSAvailabilityResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/get3dsAvailability", ctxs...)
-	return *res, httpRes, err
+    res := &ThreeDSAvailabilityResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/get3dsAvailability", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -41,7 +41,7 @@ Use the Adyen Cost Estimation API to pre-calculate interchange and scheme fee co
 @return CostEstimateResponse
 */
 func (a BinLookup) GetCostEstimate(req *CostEstimateRequest, ctxs ..._context.Context) (CostEstimateResponse, *_nethttp.Response, error) {
-	res := &CostEstimateResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getCostEstimate", ctxs...)
-	return *res, httpRes, err
+    res := &CostEstimateResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getCostEstimate", ctxs...)
+    return *res, httpRes, err
 }

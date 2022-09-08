@@ -11,10 +11,10 @@
 package platformshostedonboardingpage
 
 import (
-	_context "context"
-	_nethttp "net/http"
+    _context "context"
+    _nethttp "net/http"
 
-	"github.com/adyen/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
 )
 
 // PlatformsHostedOnboardingPage PlatformsHostedOnboardingPage service
@@ -28,7 +28,7 @@ Returns a link to a Hosted Onboarding Page (HOP) to be used by a specific accoun
 @return GetOnboardingUrlResponse
 */
 func (a PlatformsHostedOnboardingPage) GetOnboardingUrl(req *GetOnboardingUrlRequest, ctxs ..._context.Context) (GetOnboardingUrlResponse, *_nethttp.Response, error) {
-	res := &GetOnboardingUrlResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getOnboardingUrl", ctxs...)
-	return *res, httpRes, err
+    res := &GetOnboardingUrlResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getOnboardingUrl", ctxs...)
+    return *res, httpRes, err
 }

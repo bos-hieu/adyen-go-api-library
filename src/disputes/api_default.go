@@ -11,10 +11,10 @@
 package disputes
 
 import (
-	_context "context"
-	_nethttp "net/http"
+    _context "context"
+    _nethttp "net/http"
 
-	"github.com/adyen/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
 )
 
 // Disputes Disputes service
@@ -28,9 +28,9 @@ Download a dispute defense document.
 @return DownloadDefenseDocumentResponse
 */
 func (a Disputes) DownloadDisputeDefenseDocument(req *DownloadDefenseDocumentRequest, ctxs ..._context.Context) (DownloadDefenseDocumentResponse, *_nethttp.Response, error) {
-	res := &DownloadDefenseDocumentResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/downloadDisputeDefenseDocument", ctxs...)
-	return *res, httpRes, err
+    res := &DownloadDefenseDocumentResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/downloadDisputeDefenseDocument", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -41,9 +41,9 @@ Retrieve a list of possible defense reasons with required documents for the give
 @return DefenseReasonsResponse
 */
 func (a Disputes) RetrieveApplicableDefenseReasons(req *DefenseReasonsRequest, ctxs ..._context.Context) (DefenseReasonsResponse, *_nethttp.Response, error) {
-	res := &DefenseReasonsResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/retrieveApplicableDefenseReasons", ctxs...)
-	return *res, httpRes, err
+    res := &DefenseReasonsResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/retrieveApplicableDefenseReasons", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -54,9 +54,9 @@ Defend the dispute with the given reason code.
 @return DefendDisputeResponse
 */
 func (a Disputes) DefendDispute(req *DefendDisputeRequest, ctxs ..._context.Context) (DefendDisputeResponse, *_nethttp.Response, error) {
-	res := &DefendDisputeResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/defendDispute", ctxs...)
-	return *res, httpRes, err
+    res := &DefendDisputeResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/defendDispute", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -67,9 +67,9 @@ Delete a dispute defense document.
 @return DeleteDefenseDocumentResponse
 */
 func (a Disputes) DeleteDisputeDefenseDocument(req *DeleteDefenseDocumentRequest, ctxs ..._context.Context) (DeleteDefenseDocumentResponse, *_nethttp.Response, error) {
-	res := &DeleteDefenseDocumentResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteDisputeDefenseDocument", ctxs...)
-	return *res, httpRes, err
+    res := &DeleteDefenseDocumentResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteDisputeDefenseDocument", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -80,7 +80,7 @@ Supply a dispute defense document.
 @return SupplyDefenseDocumentResponse
 */
 func (a Disputes) SupplyDefenseDocument(req *SupplyDefenseDocumentRequest, ctxs ..._context.Context) (SupplyDefenseDocumentResponse, *_nethttp.Response, error) {
-	res := &SupplyDefenseDocumentResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/supplyDefenseDocument", ctxs...)
-	return *res, httpRes, err
+    res := &SupplyDefenseDocumentResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/supplyDefenseDocument", ctxs...)
+    return *res, httpRes, err
 }

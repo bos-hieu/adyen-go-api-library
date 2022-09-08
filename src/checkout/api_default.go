@@ -11,10 +11,10 @@
 package checkout
 
 import (
-	_context "context"
-	_nethttp "net/http"
+    _context "context"
+    _nethttp "net/http"
 
-	"github.com/adyen/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
 )
 
 // Checkout Checkout service
@@ -28,9 +28,9 @@ Retrieves the payment link details using the payment link &#x60;id&#x60;.
 @return PaymentLinkResource
 */
 func (a Checkout) GetPaymentLink(linkId string, ctxs ..._context.Context) (PaymentLinkResource, *_nethttp.Response, error) {
-	res := &PaymentLinkResource{}
-	httpRes, err := a.Client.MakeHTTPGetRequest(res, a.BasePath()+"/paymentLinks/"+linkId, ctxs...)
-	return *res, httpRes, err
+    res := &PaymentLinkResource{}
+    httpRes, err := a.Client.MakeHTTPGetRequest(res, a.BasePath()+"/paymentLinks/"+linkId, ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -42,9 +42,9 @@ Updates the status of a payment link. Use this endpoint to [force the expiry of 
 @return PaymentLinkResource
 */
 func (a Checkout) UpdatePaymentLink(linkId string, req *UpdatePaymentLinkRequest, ctxs ..._context.Context) (PaymentLinkResource, *_nethttp.Response, error) {
-	res := &PaymentLinkResource{}
-	httpRes, err := a.Client.MakeHTTPPatchRequest(req, res, a.BasePath()+"/paymentLinks/"+linkId, ctxs...)
-	return *res, httpRes, err
+    res := &PaymentLinkResource{}
+    httpRes, err := a.Client.MakeHTTPPatchRequest(req, res, a.BasePath()+"/paymentLinks/"+linkId, ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -55,9 +55,9 @@ Creates an order to be used for partial payments. Make a POST &#x60;/orders&#x60
 @return CheckoutCreateOrderResponse
 */
 func (a Checkout) Orders(req *CheckoutCreateOrderRequest, ctxs ..._context.Context) (CheckoutCreateOrderResponse, *_nethttp.Response, error) {
-	res := &CheckoutCreateOrderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/orders", ctxs...)
-	return *res, httpRes, err
+    res := &CheckoutCreateOrderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/orders", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -68,9 +68,9 @@ Cancels an order. Cancellation of an order results in an automatic rollback of a
 @return CheckoutCancelOrderResponse
 */
 func (a Checkout) OrdersCancel(req *CheckoutCancelOrderRequest, ctxs ..._context.Context) (CheckoutCancelOrderResponse, *_nethttp.Response, error) {
-	res := &CheckoutCancelOrderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/orders/cancel", ctxs...)
-	return *res, httpRes, err
+    res := &CheckoutCancelOrderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/orders/cancel", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -81,9 +81,9 @@ This operation takes the origin domains and returns a JSON object containing the
 @return CheckoutUtilityResponse
 */
 func (a Checkout) OriginKeys(req *CheckoutUtilityRequest, ctxs ..._context.Context) (CheckoutUtilityResponse, *_nethttp.Response, error) {
-	res := &CheckoutUtilityResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/originKeys", ctxs...)
-	return *res, httpRes, err
+    res := &CheckoutUtilityResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/originKeys", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -94,9 +94,9 @@ Creates a payment link to our hosted payment form where shoppers can pay. The li
 @return PaymentLinkResource
 */
 func (a Checkout) PaymentLinks(req *CreatePaymentLinkRequest, ctxs ..._context.Context) (PaymentLinkResource, *_nethttp.Response, error) {
-	res := &PaymentLinkResource{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentLinks", ctxs...)
-	return *res, httpRes, err
+    res := &PaymentLinkResource{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentLinks", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -107,9 +107,9 @@ Queries the available payment methods for a transaction based on the transaction
 @return PaymentMethodsResponse
 */
 func (a Checkout) PaymentMethods(req *PaymentMethodsRequest, ctxs ..._context.Context) (PaymentMethodsResponse, *_nethttp.Response, error) {
-	res := &PaymentMethodsResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentMethods", ctxs...)
-	return *res, httpRes, err
+    res := &PaymentMethodsResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentMethods", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -120,9 +120,9 @@ Retrieves the balance remaining on a shopper&#39;s gift card. To check a gift ca
 @return CheckoutBalanceCheckResponse
 */
 func (a Checkout) PaymentMethodsBalance(req *CheckoutBalanceCheckRequest, ctxs ..._context.Context) (CheckoutBalanceCheckResponse, *_nethttp.Response, error) {
-	res := &CheckoutBalanceCheckResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentMethods/balance", ctxs...)
-	return *res, httpRes, err
+    res := &CheckoutBalanceCheckResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentMethods/balance", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -133,9 +133,9 @@ Provides the data object that can be used to start the Checkout SDK. To set up t
 @return PaymentSetupResponse
 */
 func (a Checkout) PaymentSession(req *PaymentSetupRequest, ctxs ..._context.Context) (PaymentSetupResponse, *_nethttp.Response, error) {
-	res := &PaymentSetupResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentSession", ctxs...)
-	return *res, httpRes, err
+    res := &PaymentSetupResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/paymentSession", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -146,18 +146,18 @@ Sends payment parameters (like amount, country, and currency) together with othe
 @return PaymentResponse
 */
 func (a Checkout) Payments(req *PaymentRequest, ctxs ..._context.Context) (PaymentResponse, *_nethttp.Response, error) {
-	res := &PaymentResponse{}
-	adyenLib := &CommonField{
-		Name:    common.LibName,
-		Version: common.LibVersion,
-	}
-	if req.ApplicationInfo == nil {
-		req.ApplicationInfo = &ApplicationInfo{}
-	}
-	req.ApplicationInfo.AdyenLibrary = adyenLib
+    res := &PaymentResponse{}
+    adyenLib := &CommonField{
+        Name:    common.LibName,
+        Version: common.LibVersion,
+    }
+    if req.ApplicationInfo == nil {
+        req.ApplicationInfo = &ApplicationInfo{}
+    }
+    req.ApplicationInfo.AdyenLibrary = adyenLib
 
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payments", ctxs...)
-	return *res, httpRes, err
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payments", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -168,9 +168,9 @@ Submits details for a payment created using &#x60;/payments&#x60;. This step is 
 @return PaymentDetailsResponse
 */
 func (a Checkout) PaymentsDetails(req *DetailsRequest, ctxs ..._context.Context) (PaymentDetailsResponse, *_nethttp.Response, error) {
-	res := &PaymentDetailsResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payments/details", ctxs...)
-	return *res, httpRes, err
+    res := &PaymentDetailsResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payments/details", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -181,7 +181,7 @@ Verifies the payment result using the payload returned from the Checkout SDK.  F
 @return PaymentVerificationResponse
 */
 func (a Checkout) PaymentsResult(req *PaymentVerificationRequest, ctxs ..._context.Context) (PaymentVerificationResponse, *_nethttp.Response, error) {
-	res := &PaymentVerificationResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payments/result", ctxs...)
-	return *res, httpRes, err
+    res := &PaymentVerificationResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payments/result", ctxs...)
+    return *res, httpRes, err
 }

@@ -11,10 +11,10 @@
 package platformsaccount
 
 import (
-	_context "context"
-	_nethttp "net/http"
+    _context "context"
+    _nethttp "net/http"
 
-	"github.com/adyen/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
 )
 
 // PlatformsAccount PlatformsAccount service
@@ -28,9 +28,9 @@ This endpoint allows to trigger the verification of the account holder earlier t
 @return GenericResponse
 */
 func (a PlatformsAccount) CheckAccountHolder(req *PerformVerificationRequest, ctxs ..._context.Context) (GenericResponse, *_nethttp.Response, error) {
-	res := &GenericResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/checkAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &GenericResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/checkAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -41,9 +41,9 @@ This endpoint is used to close an existing account under an account holder. If a
 @return CloseAccountResponse
 */
 func (a PlatformsAccount) CloseAccount(req *CloseAccountRequest, ctxs ..._context.Context) (CloseAccountResponse, *_nethttp.Response, error) {
-	res := &CloseAccountResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/closeAccount", ctxs...)
-	return *res, httpRes, err
+    res := &CloseAccountResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/closeAccount", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -54,9 +54,9 @@ This endpoint is used to close an existing account holder and its accounts. If a
 @return CloseAccountHolderResponse
 */
 func (a PlatformsAccount) CloseAccountHolder(req *CloseAccountHolderRequest, ctxs ..._context.Context) (CloseAccountHolderResponse, *_nethttp.Response, error) {
-	res := &CloseAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/closeAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &CloseAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/closeAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -67,9 +67,9 @@ This endpoint is used to create an account under an existing account holder. An 
 @return CreateAccountResponse
 */
 func (a PlatformsAccount) CreateAccount(req *CreateAccountRequest, ctxs ..._context.Context) (CreateAccountResponse, *_nethttp.Response, error) {
-	res := &CreateAccountResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/createAccount", ctxs...)
-	return *res, httpRes, err
+    res := &CreateAccountResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/createAccount", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -80,9 +80,9 @@ This endpoint is used to create an account holder. Each account holder represent
 @return CreateAccountHolderResponse
 */
 func (a PlatformsAccount) CreateAccountHolder(req *CreateAccountHolderRequest, ctxs ..._context.Context) (CreateAccountHolderResponse, *_nethttp.Response, error) {
-	res := &CreateAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/createAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &CreateAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/createAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -93,9 +93,9 @@ This endpoint is used to delete existing bank accounts from an account holder. F
 @return GenericResponse
 */
 func (a PlatformsAccount) DeleteBankAccounts(req *DeleteBankAccountRequest, ctxs ..._context.Context) (GenericResponse, *_nethttp.Response, error) {
-	res := &GenericResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteBankAccounts", ctxs...)
-	return *res, httpRes, err
+    res := &GenericResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteBankAccounts", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -106,9 +106,9 @@ This endpoint is used to delete existing payout method from an account holder. F
 @return GenericResponse
 */
 func (a PlatformsAccount) DeletePayoutMethods(req *DeletePayoutMethodRequest, ctxs ..._context.Context) (GenericResponse, *_nethttp.Response, error) {
-	res := &GenericResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deletePayoutMethods", ctxs...)
-	return *res, httpRes, err
+    res := &GenericResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deletePayoutMethods", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -119,9 +119,9 @@ This endpoint is used to delete existing shareholders from an account holder.
 @return GenericResponse
 */
 func (a PlatformsAccount) DeleteShareholders(req *DeleteShareholderRequest, ctxs ..._context.Context) (GenericResponse, *_nethttp.Response, error) {
-	res := &GenericResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteShareholders", ctxs...)
-	return *res, httpRes, err
+    res := &GenericResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/deleteShareholders", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -132,9 +132,9 @@ This endpoint is used to retrieve the details of an account holder.
 @return GetAccountHolderResponse
 */
 func (a PlatformsAccount) GetAccountHolder(req *GetAccountHolderRequest, ctxs ..._context.Context) (GetAccountHolderResponse, *_nethttp.Response, error) {
-	res := &GetAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &GetAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -145,9 +145,9 @@ This endpoint is used to retrieve documents previously uploaded for use in the K
 @return GetUploadedDocumentsResponse
 */
 func (a PlatformsAccount) GetUploadedDocuments(req *GetUploadedDocumentsRequest, ctxs ..._context.Context) (GetUploadedDocumentsResponse, *_nethttp.Response, error) {
-	res := &GetUploadedDocumentsResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getUploadedDocuments", ctxs...)
-	return *res, httpRes, err
+    res := &GetUploadedDocumentsResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/getUploadedDocuments", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -158,9 +158,9 @@ This endpoint is used to suspend an existing account holder. If an account holde
 @return SuspendAccountHolderResponse
 */
 func (a PlatformsAccount) SuspendAccountHolder(req *SuspendAccountHolderRequest, ctxs ..._context.Context) (SuspendAccountHolderResponse, *_nethttp.Response, error) {
-	res := &SuspendAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/suspendAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &SuspendAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/suspendAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -171,9 +171,9 @@ This endpoint is used to reinstate an existing account holder that has been susp
 @return UnSuspendAccountHolderResponse
 */
 func (a PlatformsAccount) UnSuspendAccountHolder(req *UnSuspendAccountHolderRequest, ctxs ..._context.Context) (UnSuspendAccountHolderResponse, *_nethttp.Response, error) {
-	res := &UnSuspendAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/unSuspendAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &UnSuspendAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/unSuspendAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -184,9 +184,9 @@ This endpoint is used to update the description or payout schedule of an existin
 @return UpdateAccountResponse
 */
 func (a PlatformsAccount) UpdateAccount(req *UpdateAccountRequest, ctxs ..._context.Context) (UpdateAccountResponse, *_nethttp.Response, error) {
-	res := &UpdateAccountResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateAccount", ctxs...)
-	return *res, httpRes, err
+    res := &UpdateAccountResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateAccount", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -197,9 +197,9 @@ This endpoint is used to update the &#x60;accountHolderDetails&#x60; or &#x60;pr
 @return UpdateAccountHolderResponse
 */
 func (a PlatformsAccount) UpdateAccountHolder(req *UpdateAccountHolderRequest, ctxs ..._context.Context) (UpdateAccountHolderResponse, *_nethttp.Response, error) {
-	res := &UpdateAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &UpdateAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -210,9 +210,9 @@ This endpoint is used to disable or enable the processing or payout state of an 
 @return GetAccountHolderStatusResponse
 */
 func (a PlatformsAccount) UpdateAccountHolderState(req *UpdateAccountHolderStateRequest, ctxs ..._context.Context) (GetAccountHolderStatusResponse, *_nethttp.Response, error) {
-	res := &GetAccountHolderStatusResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateAccountHolderState", ctxs...)
-	return *res, httpRes, err
+    res := &GetAccountHolderStatusResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/updateAccountHolderState", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -223,7 +223,7 @@ This endpoint is used to upload a document for use in the KYC verification of an
 @return UpdateAccountHolderResponse
 */
 func (a PlatformsAccount) UploadDocument(req *UploadDocumentRequest, ctxs ..._context.Context) (UpdateAccountHolderResponse, *_nethttp.Response, error) {
-	res := &UpdateAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/uploadDocument", ctxs...)
-	return *res, httpRes, err
+    res := &UpdateAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/uploadDocument", ctxs...)
+    return *res, httpRes, err
 }

@@ -11,10 +11,10 @@
 package platformsfund
 
 import (
-	_context "context"
-	_nethttp "net/http"
+    _context "context"
+    _nethttp "net/http"
 
-	"github.com/adyen/adyen-go-api-library/v5/src/common"
+    "github.com/bos-hieu/adyen-go-api-library/v5/src/common"
 )
 
 // PlatformsFund PlatformsFund service
@@ -28,9 +28,9 @@ This endpoint is used to retrieve the balance(s) of the accounts of an account h
 @return AccountHolderBalanceResponse
 */
 func (a PlatformsFund) AccountHolderBalance(req *AccountHolderBalanceRequest, ctxs ..._context.Context) (AccountHolderBalanceResponse, *_nethttp.Response, error) {
-	res := &AccountHolderBalanceResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/accountHolderBalance", ctxs...)
-	return *res, httpRes, err
+    res := &AccountHolderBalanceResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/accountHolderBalance", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -41,9 +41,9 @@ This endpoint is used to retrieve a list of Transactions for an account holder&#
 @return AccountHolderTransactionListResponse
 */
 func (a PlatformsFund) AccountHolderTransactionList(req *AccountHolderTransactionListRequest, ctxs ..._context.Context) (AccountHolderTransactionListResponse, *_nethttp.Response, error) {
-	res := &AccountHolderTransactionListResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/accountHolderTransactionList", ctxs...)
-	return *res, httpRes, err
+    res := &AccountHolderTransactionListResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/accountHolderTransactionList", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -54,9 +54,9 @@ This endpoint is used to pay out a specified amount from an account to the bank 
 @return PayoutAccountHolderResponse
 */
 func (a PlatformsFund) PayoutAccountHolder(req *PayoutAccountHolderRequest, ctxs ..._context.Context) (PayoutAccountHolderResponse, *_nethttp.Response, error) {
-	res := &PayoutAccountHolderResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payoutAccountHolder", ctxs...)
-	return *res, httpRes, err
+    res := &PayoutAccountHolderResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/payoutAccountHolder", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -67,9 +67,9 @@ This endpoint is used to refund funds transferred from one account to another. B
 @return RefundFundsTransferResponse
 */
 func (a PlatformsFund) RefundFundsTransfer(req *RefundFundsTransferRequest, ctxs ..._context.Context) (RefundFundsTransferResponse, *_nethttp.Response, error) {
-	res := &RefundFundsTransferResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/refundFundsTransfer", ctxs...)
-	return *res, httpRes, err
+    res := &RefundFundsTransferResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/refundFundsTransfer", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -80,9 +80,9 @@ This endpoint is used to refund all the transactions of an account which have ta
 @return RefundNotPaidOutTransfersResponse
 */
 func (a PlatformsFund) RefundNotPaidOutTransfers(req *RefundNotPaidOutTransfersRequest, ctxs ..._context.Context) (RefundNotPaidOutTransfersResponse, *_nethttp.Response, error) {
-	res := &RefundNotPaidOutTransfersResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/refundNotPaidOutTransfers", ctxs...)
-	return *res, httpRes, err
+    res := &RefundNotPaidOutTransfersResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/refundNotPaidOutTransfers", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -93,9 +93,9 @@ This endpoint is used to define a benefactor and a beneficiary relationship betw
 @return SetupBeneficiaryResponse
 */
 func (a PlatformsFund) SetupBeneficiary(req *SetupBeneficiaryRequest, ctxs ..._context.Context) (SetupBeneficiaryResponse, *_nethttp.Response, error) {
-	res := &SetupBeneficiaryResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/setupBeneficiary", ctxs...)
-	return *res, httpRes, err
+    res := &SetupBeneficiaryResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/setupBeneficiary", ctxs...)
+    return *res, httpRes, err
 }
 
 /*
@@ -106,7 +106,7 @@ This endpoint is used to transfer funds from one account to another account. Bot
 @return TransferFundsResponse
 */
 func (a PlatformsFund) TransferFunds(req *TransferFundsRequest, ctxs ..._context.Context) (TransferFundsResponse, *_nethttp.Response, error) {
-	res := &TransferFundsResponse{}
-	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/transferFunds", ctxs...)
-	return *res, httpRes, err
+    res := &TransferFundsResponse{}
+    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/transferFunds", ctxs...)
+    return *res, httpRes, err
 }
