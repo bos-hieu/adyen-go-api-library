@@ -12,16 +12,16 @@
 package referrals
 
 import (
-    _context "context"
-    "github.com/bos-hieu/adyen-go-api-library/src/common"
-    _nethttp "net/http"
+	_context "context"
+	"github.com/bos-hieu/adyen-go-api-library/src/common"
+	_nethttp "net/http"
 )
 
 // Referrals Referrals service
 type Referrals common.Service
 
 func (a Referrals) UploadReferralsStructured(req *UploadReferralsStructuredRequest, ctxs ..._context.Context) (*UploadReferralsStructuredResponse, *_nethttp.Response, error) {
-    res := &UploadReferralsStructuredResponse{}
-    httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/uploadReferralsStructured", ctxs...)
-    return res, httpRes, err
+	res := &UploadReferralsStructuredResponse{}
+	httpRes, err := a.Client.MakeHTTPPostRequest(req, res, a.BasePath()+"/uploadReferralsStructured", ctxs...)
+	return res, httpRes, err
 }

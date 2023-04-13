@@ -11,9 +11,9 @@
 package common
 
 import (
-	"fmt"
-	"net/http"
-	"time"
+    "fmt"
+    "net/http"
+    "time"
 )
 
 // contextKeys are used to identify the type of value in the context.
@@ -23,79 +23,82 @@ import (
 type contextKey string
 
 func (c contextKey) String() string {
-	return "auth " + string(c)
+    return "auth " + string(c)
 }
 
 var (
-	// ContextOAuth2 takes an oauth2.TokenSource as authentication for the Request.
-	ContextOAuth2 = contextKey("token")
+    // ContextOAuth2 takes an oauth2.TokenSource as authentication for the Request.
+    ContextOAuth2 = contextKey("token")
 
-	// ContextBasicAuth takes BasicAuth as authentication for the Request.
-	ContextBasicAuth = contextKey("basic")
+    // ContextBasicAuth takes BasicAuth as authentication for the Request.
+    ContextBasicAuth = contextKey("basic")
 
-	// ContextAccessToken takes a string oauth2 access token as authentication for the Request.
-	ContextAccessToken = contextKey("accesstoken")
+    // ContextAccessToken takes a string oauth2 access token as authentication for the Request.
+    ContextAccessToken = contextKey("accesstoken")
 
-	// ContextAPIKey takes an APIKey as authentication for the Request
-	ContextAPIKey = contextKey("apikey")
+    // ContextAPIKey takes an APIKey as authentication for the Request
+    ContextAPIKey = contextKey("apikey")
 )
 
 // BasicAuth provides basic http authentication to a Request passed via context using ContextBasicAuth
 type BasicAuth struct {
-	UserName string `json:"userName,omitempty"`
-	Password string `json:"password,omitempty"`
+    UserName string `json:"userName,omitempty"`
+    Password string `json:"password,omitempty"`
 }
 
 // APIKey provides API key based authentication to a Request passed via context using ContextAPIKey
 type APIKey struct {
-	Key    string
-	Prefix string
+    Key    string
+    Prefix string
 }
 
 type Environment string
 
 const (
-	TestEnv Environment = "TEST"
-	LiveEnv Environment = "LIVE"
+    TestEnv Environment = "TEST"
+    LiveEnv Environment = "LIVE"
 )
 
 const (
-	LibName    = "adyen-go-api-library"
-	LibVersion = "5.0.2"
+    LibName    = "adyen-go-api-library"
+    LibVersion = "5.0.2"
 )
 
 // Config stores the configuration of the API client
 type Config struct {
-	Username                string        `json:"username,omitempty"`
-	Password                string        `json:"password,omitempty"`
-	MerchantAccount         string        `json:"merchantAccount,omitempty"`
-	Environment             Environment   `json:"environment,omitempty"`
-	Endpoint                string        `json:"endpoint,omitempty"`
-	MarketPayEndpoint       string        `json:"marketPayEndpoint,omitempty"`
-	ApiKey                  string        `json:"apiKey,omitempty"`
-	ConnectionTimeoutMillis time.Duration `json:"connectionTimeoutMillis,omitempty"`
-	CertificatePath         string        `json:"certificatePath,omitempty"`
-	DisputesEndpoint        string        `json:"disputesEndpoint,omitempty"`
+    Username                string        `json:"username,omitempty"`
+    Password                string        `json:"password,omitempty"`
+    MerchantAccount         string        `json:"merchantAccount,omitempty"`
+    Environment             Environment   `json:"environment,omitempty"`
+    Endpoint                string        `json:"endpoint,omitempty"`
+    MarketPayEndpoint       string        `json:"marketPayEndpoint,omitempty"`
+    ApiKey                  string        `json:"apiKey,omitempty"`
+    ConnectionTimeoutMillis time.Duration `json:"connectionTimeoutMillis,omitempty"`
+    CertificatePath         string        `json:"certificatePath,omitempty"`
+    DisputesEndpoint        string        `json:"disputesEndpoint,omitempty"`
 
-	//Checkout Specific
-	CheckoutEndpoint string `json:"checkoutEndpoint,omitempty"`
+    // Checkout Specific
+    CheckoutEndpoint string `json:"checkoutEndpoint,omitempty"`
 
-	//Terminal API Specific
-	TerminalApiCloudEndpoint string `json:"terminalApiCloudEndpoint,omitempty"`
-	TerminalApiLocalEndpoint string `json:"terminalApiLocalEndpoint,omitempty"`
-	TerminalCertificatePath  string `json:"terminalCertificatePath,omitempty"`
+    // Referrals
+    ReferralsEndpoint string `json:"referralEndpoint,omitempty"`
 
-	LiveEndpointURLPrefix string            `json:"liveEndpointURLPrefix,omitempty"`
-	DefaultHeader         map[string]string `json:"defaultHeader,omitempty"`
-	Debug                 bool              `json:"debug,omitempty"`
-	UserAgent             string            `json:"userAgent,omitempty"`
-	HTTPClient            *http.Client
+    // Terminal API Specific
+    TerminalApiCloudEndpoint string `json:"terminalApiCloudEndpoint,omitempty"`
+    TerminalApiLocalEndpoint string `json:"terminalApiLocalEndpoint,omitempty"`
+    TerminalCertificatePath  string `json:"terminalCertificatePath,omitempty"`
+
+    LiveEndpointURLPrefix string            `json:"liveEndpointURLPrefix,omitempty"`
+    DefaultHeader         map[string]string `json:"defaultHeader,omitempty"`
+    Debug                 bool              `json:"debug,omitempty"`
+    UserAgent             string            `json:"userAgent,omitempty"`
+    HTTPClient            *http.Client
 }
 
 func (c *Config) GetCheckoutEndpoint() (string, error) {
-	if c.CheckoutEndpoint == "" {
-		message := "Please provide your unique live url prefix on the SetEnvironment() call on the APIClient or provide checkoutEndpoint in your config object."
-		return "", fmt.Errorf(message)
-	}
-	return c.CheckoutEndpoint, nil
+    if c.CheckoutEndpoint == "" {
+        message := "Please provide your unique live url prefix on the SetEnvironment() call on the APIClient or provide checkoutEndpoint in your config object."
+        return "", fmt.Errorf(message)
+    }
+    return c.CheckoutEndpoint, nil
 }
